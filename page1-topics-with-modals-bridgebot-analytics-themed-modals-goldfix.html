@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+  body {
+    background: radial-gradient(ellipse at center, #0f172a 0%, #1e293b 80%);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+  }
+  h1, h2, h3 {
+    color: #eab308; text-shadow: 0.5px 0.5px 1px #1e293b;
+    text-shadow: 0 0 10px #FFD700;
+  }
+  button, .info-btn {
+    background: transparent;
+    border: 2px solid #FFD700;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    color: #5eead4;
+    font-weight: bold;
+    box-shadow: 0 0 12px #FFD700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  button:hover, .info-btn:hover {
+    background: #FFD700;
+    color: #0f172a;
+    box-shadow: 0 0 25px #FFD700;
+  }
+  .modal-content {
+    background-color: #f8fafc;
+    color: #111827;
+    border-radius: 12px;
+  }
+  .wallet-grid img {
+    border: 3px solid #FFD700;
+  }
+  .wallet input {
+    border: 1px solid #FFD700;
+    color: #0f172a;
+  }
+</style>
+
+  
+<!-- Plausible Analytics Integration -->
+<script async defer data-domain="bridgexcapital.ai" src="https://plausible.io/js/plausible.js"></script>
+
+  <meta charset="UTF-8">
+  <title>Bridge X Live | Topics Overview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background-color: #0f172a; color: white; font-family: Arial, sans-serif; padding: 2rem; }
+    h1, h2 { color: #ffd700; text-align: center; }
+    .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .topic { background: #1e293b; padding: 1rem; border-radius: 8px; cursor: pointer; transition: 0.3s ease; }
+    .topic:hover { background-color: #334155; }
+    .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); }
+    .modal-content { background: #f8fafc; color: #111827; margin: 10% auto; padding: 2rem; border-radius: 12px; width: 80%; max-width: 600px; }
+    .close { color: #000; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h1>Bridge X Live Web3 Experience</h1>
+  <h2>Topics Overview</h2>
+
+  <div class="topic-grid">
+    <div class="topic" onclick="openModal('modal1')">What is Blockchain?</div>
+    <div class="topic" onclick="openModal('modal2')">Wallet Literacy</div>
+    <div class="topic" onclick="openModal('modal3')">DeFi vs TradFi</div>
+    <div class="topic" onclick="openModal('modal4')">How Crypto Powers the People</div>
+    <div class="topic" onclick="openModal('modal5')">DAOs & Community Governance</div>
+    <div class="topic" onclick="openModal('modal6')">Earning in Web3</div>
+  </div>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal1')">&times;</span>
+    <h2>What is Blockchain?</h2>
+    <p>Blockchain is a digital ledger that records transactions across decentralized networks. It enables trust without middlemen, powering transparency and programmable value exchange. PTUSD relies on blockchain to offer community-driven stablecoin access.</p>
+  </div></div>
+
+  <div id="modal2" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal2')">&times;</span>
+    <h2>Wallet Literacy</h2>
+    <p>Wallets are your gateway to the decentralized economy. Knowing how to set up, secure, and use crypto wallets is fundamental. Holding BRC, BXC, or PTUSD requires wallet literacy to engage in lending, voting, and rewards.</p>
+  </div></div>
+
+  <div id="modal3" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal3')">&times;</span>
+    <h2>DeFi vs TradFi</h2>
+    <p>Traditional Finance (TradFi) is institution-led. DeFi removes gatekeepers. With tokens like VRB for identity, and BRC for community finance, you can join or even launch financial tools peer-to-peer.</p>
+  </div></div>
+
+  <div id="modal4" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal4')">&times;</span>
+    <h2>How Crypto Powers the People</h2>
+    <p>Crypto enables people to become stakeholders, not just customers. PTUSD empowers communities to circulate value locally. BXC fuels education and business. VRB makes ID programmable and secure.</p>
+  </div></div>
+
+  <div id="modal5" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal5')">&times;</span>
+    <h2>DAOs & Community Governance</h2>
+    <p>DAOs (Decentralized Autonomous Organizations) allow the people to govern themselves. BRC and BXC holders may vote on budgets, rewards, or partners. Blockchain = transparent democracy.</p>
+  </div></div>
+
+  <div id="modal6" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('modal6')">&times;</span>
+    <h2>Earning in Web3</h2>
+    <p>You can earn in Web3 through learning, liquidity provision, and staking. Bridge X Live rewards learners with BRC and BXC. These tokens can access services, unlock certifications, or grow in value.</p>
+  </div></div>
+
+  <script>
+    function openModal(id) { document.getElementById(id).style.display = "block"; }
+    function closeModal(id) { document.getElementById(id).style.display = "none"; }
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) modal.style.display = "none";
+      });
+    };
+  </script>
+
+
+<!-- BridgeBot Floating Assistant -->
+<style>
+  #bridgebot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #facc15;
+    color: #0f172a;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 999;
+  }
+  .bridgebot-modal {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: #f8fafc;
+    color: #1e293b;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 999;
+  }
+  .bridgebot-header {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .bridgebot-close {
+    float: right;
+    cursor: pointer;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .bridgebot-body p {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+</style>
+
+<button id="bridgebot-btn" onclick="toggleBridgeBot()">Ask BridgeBot</button>
+
+<div id="bridgebot-modal" class="bridgebot-modal">
+  <div class="bridgebot-header">
+    BridgeBot <span class="bridgebot-close" onclick="toggleBridgeBot()">&times;</span>
+  </div>
+  <div class="bridgebot-body">
+    <p><strong>Q:</strong> What’s included in the 6-month plan?</p>
+    <p><strong>A:</strong> Bonus tokens, monthly challenges, event access, and limited DAO voting rights!</p>
+    <p><strong>Q:</strong> How do I pay with crypto?</p>
+    <p><strong>A:</strong> Scan the QR or copy a wallet address. Check the network before sending.</p>
+    <p><strong>Q:</strong> What is PTUSD?</p>
+    <p><strong>A:</strong> PTUSD is a community-driven stablecoin accepted throughout the Bridge X ecosystem.</p>
+  </div>
+</div>
+
+<script>
+  function toggleBridgeBot() {
+    const bot = document.getElementById('bridgebot-modal');
+    bot.style.display = (bot.style.display === 'block') ? 'none' : 'block';
+  }
+</script>
+
+</body>
+</html>

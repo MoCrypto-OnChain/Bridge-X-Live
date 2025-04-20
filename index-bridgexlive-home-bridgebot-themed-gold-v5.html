@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bridge X Live | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(ellipse at center, #0f172a 0%, #1e293b 80%);
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1, h2, h3 { font-family: 'Orbitron', sans-serif; 
+      color: #FFD700;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 15px #FFD700;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: #5eead4;
+      margin-bottom: 2.5rem;
+    }
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+    .tile {
+      background-color: #1e293b;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid #5eead4;
+      transition: 0.3s ease;
+      box-shadow: 0 0 10px rgba(94, 234, 212, 0.5);
+    }
+    .tile:hover {
+      background-color: #334155;
+      box-shadow: 0 0 18px #5eead4;
+    }
+    a {
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .tile .subtitle {
+      font-size: 1rem;
+      color: #a5f3fc;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bridge X Live: Bi-Monthly Web3 Experience</h1>
+  <p class="subtitle">Explore, Learn, and Join the Future of Finance</p>
+
+  <div class="tiles">
+    <div class="tile">
+      <a href="page1-topics-with-modals-bridgebot-analytics-themed.html">Topics Overview</a>
+      <div class="subtitle">Discover What We Cover</div>
+    </div>
+    <div class="tile">
+      <a href="page2-pricing-with-upsell-bridgebot-analytics-themed.html">Pricing + Access</a>
+      <div class="subtitle">View Plans + Unlock Benefits</div>
+    </div>
+    <div class="tile">
+      <a href="page3-crypto-payment-with-modals-bridgebot-analytics-themed.html">Crypto Payment</a>
+      <div class="subtitle">Pay with BTC, XRP, XDC & More</div>
+    </div>
+  </div>
+
+
+<!-- BridgeBot Floating Assistant -->
+<style>
+  #bridgebot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #facc15;
+    color: #0f172a;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 999;
+  }
+  .bridgebot-modal {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: #f8fafc;
+    color: #1e293b;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 999;
+  }
+  .bridgebot-header {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .bridgebot-close {
+    float: right;
+    cursor: pointer;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .bridgebot-body p {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+</style>
+
+<button id="bridgebot-btn" onclick="toggleBridgeBot()">Ask BridgeBot</button>
+
+<div id="bridgebot-modal" class="bridgebot-modal">
+  <div class="bridgebot-header">
+    BridgeBot <span class="bridgebot-close" onclick="toggleBridgeBot()">&times;</span>
+  </div>
+  <div class="bridgebot-body">
+    <p><strong>Q:</strong> What is Bridge X Live?</p>
+    <p><strong>A:</strong> A bi-monthly Web3 experience to help you learn, earn, and engage with crypto directly.</p>
+    <p><strong>Q:</strong> How do I register?</p>
+    <p><strong>A:</strong> Explore the pricing tab and choose your payment method.</p>
+    <p><strong>Q:</strong> What if I miss a session?</p>
+    <p><strong>A:</strong> Replays and token rewards will be made available after each live event.</p>
+  </div>
+</div>
+
+<script>
+  function toggleBridgeBot() {
+    const bot = document.getElementById('bridgebot-modal');
+    bot.style.display = (bot.style.display === 'block') ? 'none' : 'block';
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+  body {
+    background: radial-gradient(ellipse at center, #0f172a 0%, #1e293b 80%);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+  }
+  h1, h2, h3 {
+    color: #eab308; text-shadow: 0.5px 0.5px 1px #1e293b;
+    text-shadow: 0 0 10px #FFD700;
+  }
+  button, .info-btn {
+    background: transparent;
+    border: 2px solid #FFD700;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    color: #5eead4;
+    font-weight: bold; font-size: 1rem; font-family: 'Arial', sans-serif;
+    box-shadow: 0 0 12px #FFD700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  button:hover, .info-btn:hover {
+    background: #FFD700;
+    color: #0f172a;
+    box-shadow: 0 0 25px #FFD700;
+  }
+  .modal-content {
+    background-color: #f8fafc;
+    color: #111827;
+    border-radius: 12px;
+  }
+  .wallet-grid img {
+    border: 3px solid #FFD700;
+  }
+  .wallet input {
+    border: 1px solid #FFD700;
+    color: #0f172a;
+  }
+</style>
+
+  
+<!-- Plausible Analytics Integration -->
+<script async defer data-domain="bridgexcapital.ai" src="https://plausible.io/js/plausible.js"></script>
+
+  <meta charset="UTF-8" />
+  <title>Bridge X Live | Crypto Payment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background-color: #0f172a; color: white; font-family: Arial, sans-serif; padding: 2rem; }
+    h1, h2 { color: #ffd700; text-align: center; }
+    .wallet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .wallet { text-align: center; background: #1e293b; padding: 1rem; border-radius: 10px; }
+    .wallet img { border: 3px solid white; border-radius: 8px; margin-bottom: 0.5rem; }
+    input { width: 90%; padding: 0.25rem; font-size: 0.85rem; margin-bottom: 0.5rem; }
+    button { background-color: #eab308; text-shadow: 0.5px 0.5px 1px #1e293b; color: #0f172a; font-weight: bold; font-size: 1rem; font-family: 'Arial', sans-serif; border: none; padding: 0.3rem 0.8rem; font-weight: bold; font-size: 1rem; font-family: 'Arial', sans-serif; border-radius: 4px; cursor: pointer; }
+    .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+    .modal-content { background: #f8fafc; color: #111827; margin: 10% auto; padding: 2rem; border-radius: 12px; width: 80%; max-width: 600px; }
+    .close { color: #000; float: right; font-size: 28px; font-weight: bold; font-size: 1rem; font-family: 'Arial', sans-serif; cursor: pointer; }
+    .info-btn { display: block; text-align: center; color: #ffd700; cursor: pointer; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+  <h1>Crypto Payment Options</h1>
+  <h2>Scan. Pay. Go.</h2>
+
+  <div class="info-btn" onclick="openModal('walletHelp')">How do I use this?</div>
+
+  <div class="wallet-grid">
+    
+    <div class="wallet">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=GDSN3TSHPKTYFDJI3PIDZD67WWOCSQQZH5LOI7WSLRZA64WODEZC3GTU" alt="SHX QR">
+      <p><strong>SHX Wallet</strong></p>
+      <input type="text" value="GDSN3TSHPKTYFDJI3PIDZD67WWOCSQQZH5LOI7WSLRZA64WODEZC3GTU" id="SHXAddr" readonly>
+      <button onclick="copyToClipboard('SHXAddr')">Copy</button>
+    </div>
+    
+    <div class="wallet">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=xdc56953200bBC871C03bFb7C64b5A0bc46bfe15747" alt="XDC QR">
+      <p><strong>XDC Wallet</strong></p>
+      <input type="text" value="xdc56953200bBC871C03bFb7C64b5A0bc46bfe15747" id="XDCAddr" readonly>
+      <button onclick="copyToClipboard('XDCAddr')">Copy</button>
+    </div>
+    
+    <div class="wallet">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=GC6KVDGOQ3S5KFULRT4IXPE7JKJX63RIXAHWQDWSF6IRCSYO22CBTQET" alt="XLM QR">
+      <p><strong>XLM Wallet</strong></p>
+      <input type="text" value="GC6KVDGOQ3S5KFULRT4IXPE7JKJX63RIXAHWQDWSF6IRCSYO22CBTQET" id="XLMAddr" readonly>
+      <button onclick="copyToClipboard('XLMAddr')">Copy</button>
+    </div>
+    
+    <div class="wallet">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=rHqFevRCigorkSAG8ewWB6uxLpqYWDG6Sd" alt="XRP QR">
+      <p><strong>XRP Wallet</strong></p>
+      <input type="text" value="rHqFevRCigorkSAG8ewWB6uxLpqYWDG6Sd" id="XRPAddr" readonly>
+      <button onclick="copyToClipboard('XRPAddr')">Copy</button>
+    </div>
+    
+    <div class="wallet">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=bc1q2z593g95m82sfumsj3qwmr3z4ym8eweya53gcw" alt="BTC QR">
+      <p><strong>BTC Wallet</strong></p>
+      <input type="text" value="bc1q2z593g95m82sfumsj3qwmr3z4ym8eweya53gcw" id="BTCAddr" readonly>
+      <button onclick="copyToClipboard('BTCAddr')">Copy</button>
+    </div>
+    
+  </div>
+
+  <!-- Modal -->
+  <div id="walletHelp" class="modal"><div class="modal-content">
+    <span class="close" onclick="closeModal('walletHelp')">&times;</span>
+    <h2>How to Pay with Crypto</h2>
+    <p>1. Use your wallet app to scan the QR code of the token you wish to use.</p>
+    <p>2. Or copy the wallet address and paste it into your crypto wallet to send payment.</p>
+    <p><strong>Note:</strong> Use the correct network when sending each token (XDC, XLM, BTC, etc.) to ensure safe delivery.</p>
+  </div></div>
+
+  <script>
+    function openModal(id) { document.getElementById(id).style.display = "block"; }
+    function closeModal(id) { document.getElementById(id).style.display = "none"; }
+    window.onclick = function(event) {
+      const modal = document.getElementById('walletHelp');
+      if (event.target === modal) modal.style.display = "none";
+    };
+    function copyToClipboard(id) {
+      var copyText = document.getElementById(id);
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Wallet address copied to clipboard");
+    }
+  </script>
+
+
+<!-- BridgeBot Floating Assistant -->
+<style>
+  #bridgebot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #eab308; text-shadow: 0.5px 0.5px 1px #1e293b; color: #0f172a; font-weight: bold; font-size: 1rem; font-family: 'Arial', sans-serif;
+    color: #0f172a;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-weight: bold; font-size: 1rem; font-family: 'Arial', sans-serif;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 999;
+  }
+  .bridgebot-modal {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: #f8fafc;
+    color: #1e293b;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 999;
+  }
+  .bridgebot-header {
+    font-weight: bold; font-size: 1rem; font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .bridgebot-close {
+    float: right;
+    cursor: pointer;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold; font-size: 1rem; font-family: 'Arial', sans-serif;
+  }
+  .bridgebot-body p {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+</style>
+
+<button id="bridgebot-btn" onclick="toggleBridgeBot()">Ask BridgeBot</button>
+
+<div id="bridgebot-modal" class="bridgebot-modal">
+  <div class="bridgebot-header">
+    BridgeBot <span class="bridgebot-close" onclick="toggleBridgeBot()">&times;</span>
+  </div>
+  <div class="bridgebot-body">
+    <p><strong>Q:</strong> What’s included in the 6-month plan?</p>
+    <p><strong>A:</strong> Bonus tokens, monthly challenges, event access, and limited DAO voting rights!</p>
+    <p><strong>Q:</strong> How do I pay with crypto?</p>
+    <p><strong>A:</strong> Scan the QR or copy a wallet address. Check the network before sending.</p>
+    <p><strong>Q:</strong> What is PTUSD?</p>
+    <p><strong>A:</strong> PTUSD is a community-driven stablecoin accepted throughout the Bridge X ecosystem.</p>
+  </div>
+</div>
+
+<script>
+  function toggleBridgeBot() {
+    const bot = document.getElementById('bridgebot-modal');
+    bot.style.display = (bot.style.display === 'block') ? 'none' : 'block';
+  }
+</script>
+
+</body>
+</html>

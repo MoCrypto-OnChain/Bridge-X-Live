@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style>
+  body {
+    background: radial-gradient(ellipse at center, #0f172a 0%, #1e293b 80%);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+  }
+  h1, h2, h3 {
+    color: #eab308; text-shadow: 0.5px 0.5px 1px #1e293b;
+    text-shadow: 0 0 10px #FFD700;
+  }
+  button, .info-btn {
+    background: transparent;
+    border: 2px solid #FFD700;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    color: #5eead4;
+    font-weight: bold;
+    box-shadow: 0 0 12px #FFD700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  button:hover, .info-btn:hover {
+    background: #FFD700;
+    color: #0f172a;
+    box-shadow: 0 0 25px #FFD700;
+  }
+  .modal-content {
+    background-color: #f8fafc;
+    color: #111827;
+    border-radius: 12px;
+  }
+  .wallet-grid img {
+    border: 3px solid #FFD700;
+  }
+  .wallet input {
+    border: 1px solid #FFD700;
+    color: #0f172a;
+  }
+</style>
+
+  
+<!-- Plausible Analytics Integration -->
+<script async defer data-domain="bridgexcapital.ai" src="https://plausible.io/js/plausible.js"></script>
+
+  <meta charset="UTF-8" />
+  <title>Bridge X Live | Pricing & Access</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background-color: #0f172a; color: white; font-family: Arial, sans-serif; padding: 2rem; }
+    h1, h2 { color: #ffd700; text-align: center; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .plan { background: #1e293b; padding: 1.5rem; border-radius: 10px; border: 1px solid #334155; text-align: center; }
+    .plan h3 { color: #facc15; }
+    .modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); }
+    .modal-content { background: #f8fafc; color: #111827; margin: 5% auto; padding: 2rem; border-radius: 12px; width: 90%; max-width: 700px; }
+    .close { color: #000; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+    .info-btn { color: #ffd700; cursor: pointer; font-weight: bold; display: block; margin-top: 1rem; }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+
+  <h1>Bridge X Live Pricing</h1>
+  <h2>Choose the access that fits your growth</h2>
+
+  <div class="pricing-grid">
+    <div class="plan">
+      <h3>Monthly</h3>
+      <p>$97/month</p>
+      <span class="info-btn" onclick="openModal('modalPricing')">What’s Included?</span>
+    </div>
+    <div class="plan">
+      <h3>6 Months</h3>
+      <p>$485 (save $97)</p>
+      <span class="info-btn" onclick="openModal('modalPricing')">What’s Included?</span>
+    </div>
+    <div class="plan">
+      <h3>12 Months</h3>
+      <p>$970 (2 months free)</p>
+      <span class="info-btn" onclick="openModal('modalPricing')">What’s Included?</span>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalPricing" class="modal"><div class="modal-content">
+    <span class="close" onclick="closeModal('modalPricing')">&times;</span>
+    <h2>What’s Included in Each Plan?</h2>
+
+    <h3>✅ Monthly – $97/month</h3>
+    <ul>
+      <li>2 live Zoom sessions per month (interactive + recorded)</li>
+      <li>BridgeBot AI access during sessions</li>
+      <li>Bridge X Crypto Academy tokens (BRC + BXC)</li>
+      <li>Replay access for 7 days</li>
+    </ul>
+
+    <h3>🚀 6 Months – $485 (1 month free!)</h3>
+    <ul>
+      <li>Everything in Monthly</li>
+      <li>200 BRC + 200 BXC bonus tokens</li>
+      <li>Free entry to 1 premium partner event</li>
+      <li>Monthly challenge access (with bonus rewards)</li>
+      <li>Limited voting rights in Bridge X DAO</li>
+    </ul>
+
+    <h3>🌟 12 Months – $970 (2 months free!)</h3>
+    <ul>
+      <li>Everything in 6-Month tier</li>
+      <li>500 BRC + 500 BXC bonus tokens</li>
+      <li>Quarterly Strategy Roundtable seat</li>
+      <li>Featured in Community Spotlight</li>
+      <li>Early access to new products, tools & token airdrops</li>
+      <li>Full voting and proposal rights in Bridge X DAO</li>
+    </ul>
+
+    <p><strong>Pay with crypto and receive bonus rewards in BRC and PTUSD at checkout.</strong></p>
+    <p style="margin-top: 1rem; font-style: italic;">Lock in more for less. Every long-term tier unlocks deeper access, governance participation, and ecosystem utility.</p>
+  </div></div>
+
+  <script>
+    function openModal(id) { document.getElementById(id).style.display = "block"; }
+    function closeModal(id) { document.getElementById(id).style.display = "none"; }
+    window.onclick = function(event) {
+      const modal = document.getElementById('modalPricing');
+      if (event.target === modal) modal.style.display = "none";
+    };
+  </script>
+
+
+<!-- BridgeBot Floating Assistant -->
+<style>
+  #bridgebot-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #facc15;
+    color: #0f172a;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 999;
+  }
+  .bridgebot-modal {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: #f8fafc;
+    color: #1e293b;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 999;
+  }
+  .bridgebot-header {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .bridgebot-close {
+    float: right;
+    cursor: pointer;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .bridgebot-body p {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+  }
+</style>
+
+<button id="bridgebot-btn" onclick="toggleBridgeBot()">Ask BridgeBot</button>
+
+<div id="bridgebot-modal" class="bridgebot-modal">
+  <div class="bridgebot-header">
+    BridgeBot <span class="bridgebot-close" onclick="toggleBridgeBot()">&times;</span>
+  </div>
+  <div class="bridgebot-body">
+    <p><strong>Q:</strong> What’s included in the 6-month plan?</p>
+    <p><strong>A:</strong> Bonus tokens, monthly challenges, event access, and limited DAO voting rights!</p>
+    <p><strong>Q:</strong> How do I pay with crypto?</p>
+    <p><strong>A:</strong> Scan the QR or copy a wallet address. Check the network before sending.</p>
+    <p><strong>Q:</strong> What is PTUSD?</p>
+    <p><strong>A:</strong> PTUSD is a community-driven stablecoin accepted throughout the Bridge X ecosystem.</p>
+  </div>
+</div>
+
+<script>
+  function toggleBridgeBot() {
+    const bot = document.getElementById('bridgebot-modal');
+    bot.style.display = (bot.style.display === 'block') ? 'none' : 'block';
+  }
+</script>
+
+</body>
+</html>
